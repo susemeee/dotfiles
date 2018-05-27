@@ -2,6 +2,13 @@
 	email = susemeee@gmail.com
 	name = Suho Lee
 
+[alias]
+    publish = push -u origin
+    last = log -1 HEAD
+    stash-all = stash save --include-untracked
+    undo = reset --soft HEAD^
+    amend = commit --amend
+
 [push]
     default = simple
     # "push the current branch back to the branch whose changes are usually integrated into the current branch"
