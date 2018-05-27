@@ -98,7 +98,7 @@ alias gst="git status"
 alias glog="git log"
 alias gdff="git diff"
 
-export PATH="/Users/susem/.pyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
