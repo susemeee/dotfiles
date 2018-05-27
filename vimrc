@@ -15,7 +15,10 @@ source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
+set termguicolors
 syntax on
+colorscheme monokai
+
 filetype plugin indent on " enable file type detection
 set autoindent
 
