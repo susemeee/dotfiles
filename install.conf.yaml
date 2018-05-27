@@ -1,0 +1,17 @@
+- defaults:
+    shell:
+        stderr: true
+
+- clean: ['~', '~/.oh-my-zsh/custom/']
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+    ~/.vim: vim
+    ~/.vim_runtime: vim_runtime # amix vim
+
+- shell:
+    - [git submodule update --init --recursive, Updating submodules]
+    - [sh pre-install.sh, Running pre installation script]
+    - [mkdir -p ~/.oh-my-zsh/custom/plugins/, Creating oh-my-zsh custom plugin folders]
