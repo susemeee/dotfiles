@@ -30,3 +30,6 @@ set softtabstop=4
 " smart case-sensitive search
 set ignorecase
 set smartcase
+
+" I hate autofolding
+set nofoldenable
