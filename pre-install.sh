@@ -13,6 +13,7 @@ if [[ "$unamestr" == 'Darwin' ]]; then
     fi
     brew tap homebrew/bundle  # Install Homebrew Bundle
     brew install iproute2mac  # iproute2
+    brew install tig          # tig
 fi
 
 
