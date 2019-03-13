@@ -60,7 +60,8 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git,
-  zsh-syntax-highlighting
+  zsh-syntax-highlighting,
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -71,6 +72,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -108,3 +110,4 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+source /Users/suholee/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
