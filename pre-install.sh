@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # if mac, install Homebrew
 unamestr=`uname`
-if [[ "$unamestr" == 'Darwin' ]]; then
+if [ "$unamestr" == 'Darwin' ]; then
     # Check if Homebrew is installed
     if [ ! -f "`which brew`" ]; then
         echo 'Installing homebrew'
@@ -19,11 +19,12 @@ fi
 
 # Install autojump
 echo 'Installing autojump'
-if [[ "$unamestr" == 'Darwin' ]]; then
+if [ "$unamestr" == 'Darwin' ]; then
     brew install autojump
 else
     sudo apt update
     sudo apt install autojump
+    which zsh || sudo apt install -y zsh
 fi
 
 
@@ -38,7 +39,7 @@ else
 fi
 
 # Change default shell
-if [! $0 = "-zsh"]; then
+if [ ! $0 = "-zsh" ]; then
     echo 'Changing default shell to zsh'
     chsh -s /bin/zsh
 else
@@ -65,7 +66,7 @@ curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer 
 
 # sl
 echo 'Installing sl'
-if [[ "$unamestr" == 'Darwin' ]]; then
+if [ "$unamestr" == 'Darwin' ]; then
     brew install sl
 else
     sudo apt install sl
