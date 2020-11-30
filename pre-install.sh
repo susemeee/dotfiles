@@ -53,7 +53,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 cat ./zshrc >> ~/.zshrc
 if [ ! $ZSH_THEME = "pygmalion" ]; then
-sed -i 's/robbyrussell/pygmalion/g' ~/.zshrc
+sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="pygmalion"/g' ~/.zshrc
 fi
 
 # nvm
