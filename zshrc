@@ -10,6 +10,7 @@ alias gst="git status"
 alias glog="git log"
 alias gdff="git diff"
 alias git-sps="git stash && git pull && git stash pop"
+alias ta="tig --all"
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
