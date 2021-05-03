@@ -1,6 +1,9 @@
 [user]
-	email = susemeee@gmail.com
-	name = Suho Lee
+    email = susemeee@gmail.com
+    name = Suho Lee
+
+[init]
+    defaultBranch = main
 
 [alias]
     publish = push -u origin
