@@ -33,3 +33,6 @@
 [help]
     autocorrect = 1
     # https://git-scm.com/docs/git-config#git-config-helpautoCorrect
+
+[core]
+    editor = vim
