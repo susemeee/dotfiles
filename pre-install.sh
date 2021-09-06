@@ -51,10 +51,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-cat ./zshrc >> ~/.zshrc
-if [ ! $ZSH_THEME = "pygmalion" ]; then
-sed -i 's/ZSH_THEME="[^"]*"/ZSH_THEME="pygmalion"/g' ~/.zshrc
-fi
+cat ./zshrc > ~/.zshrc
 
 # nvm
 echo 'Installing nvm'
