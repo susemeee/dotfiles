@@ -1,5 +1,3 @@
-### custom zshrc below ###
-
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="pygmalion"
@@ -21,7 +19,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
    git
-#   osx
+   macos
    dotenv
 )
 source $ZSH/oh-my-zsh.sh
@@ -32,6 +30,7 @@ source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+unalias gm # graphicsmagick
 alias gst="git status"
 alias gca="git commit --amend"
 alias glog="git log"
@@ -39,20 +38,28 @@ alias gdff="git diff"
 alias git-sps="git stash && git pull && git stash pop"
 alias ta="tig --all"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# common
+# disable browser autorun of 'react-scripts start'
+export BROWSER="none"
 
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
+# susemeee-macbookpro
+export ARCHFLAGS="-arch arm64"
 export PATH="$HOME/.pyenv/shims:/opt/homebrew/bin:$PATH"
 export CFLAGS="-I/opt/homebrew/opt/openssl/include"
 export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"
-# if macos
-# export ARCHFLAGS="-arch arm64"
-# export OPENBLAS="$(brew --prefix openblas)"
+export OPENBLAS="$(brew --prefix openblas)"
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+# autojump (linux)
+# [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# nvm, pyenv
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
