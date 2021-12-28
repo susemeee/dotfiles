@@ -17,11 +17,19 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 [[ $UID = 0 ]] && ZSH_DISABLE_COMPFIX=true
 
-plugins=(
-   git
-   macos
-   dotenv
-)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+   plugins=(
+      git
+      macos
+      dotenv
+   )
+else
+   plugins=(
+      git
+      dotenv
+   ) 
+fi
+
 source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -42,12 +50,17 @@ alias ta="tig --all"
 # disable browser autorun of 'react-scripts start'
 export BROWSER="none"
 
-# susemeee-macbookpro
-export ARCHFLAGS="-arch arm64"
-export PATH="$HOME/.pyenv/shims:/opt/homebrew/bin:$PATH"
-export CFLAGS="-I/opt/homebrew/opt/openssl/include"
-export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"
-export OPENBLAS="$(brew --prefix openblas)"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+   # susemeee-macbookpro
+   export ARCHFLAGS="-arch arm64"
+   export PATH="$HOME/.pyenv/shims:/opt/homebrew/bin:$PATH"
+   export CFLAGS="-I/opt/homebrew/opt/openssl/include"
+   export LDFLAGS="-L/opt/homebrew/opt/openssl/lib"
+   export OPENBLAS="$(brew --prefix openblas)"
+   # jenv
+   export PATH="$HOME/.jenv/bin:$PATH"
+   eval "$(jenv init -)"
+fi
 
 # autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
