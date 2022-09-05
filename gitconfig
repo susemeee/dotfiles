@@ -22,6 +22,9 @@
     # Because I get sick of telling git to do it manually
     # https://git-scm.com/docs/git-config#git-config-pushfollowTags
 
+    # https://dev.to/this-is-learning/this-new-git-push-config-will-save-you-lot-of-frustration-27a9
+    autoSetupRemote = true
+
 [pull]
     rebase = true
 
