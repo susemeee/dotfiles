@@ -11,6 +11,10 @@
     stash-all = stash save --include-untracked
     undo = reset --soft HEAD^
     amend = commit --amend
+    sp = stash pop
+    sd = stash drop
+    cp = cherry-pick
+    rollback = reset --hard HEAD~1
 
 [push]
     default = simple
