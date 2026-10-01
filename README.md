@@ -79,6 +79,10 @@ staged yet, `./install` silently puts the old one back.
 ### tmux
 - [catppuccin/tmux](https://github.com/catppuccin/tmux) (mocha). Needs tmux
   3.2 or later and a [Nerd Font](https://www.nerdfonts.com/) for the icons.
+- tmux reads its config only when the server starts. If a tmux server was
+  already running before `./install`, reload it with
+  `tmux source-file ~/.config/tmux/tmux.conf` or restart it with
+  `tmux kill-server`.
 
 ### etc
 - autojump
