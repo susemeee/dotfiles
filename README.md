@@ -13,7 +13,7 @@ cd ~/dotfiles
 and runs `pre-install.sh` (Homebrew, oh-my-zsh, nvm, pyenv and so on).
 
 dotbot does not overwrite existing files. If `~/.gitconfig`, `~/.zshrc`,
-`~/.vim` or `~/.config/tmux` already exist as regular files or directories,
+`~/.vim` or `~/.tmux.conf` already exist as regular files or directories,
 it prints `already exists but is a regular file or directory` and skips them.
 Move them out of the way and run `./install` again.
 
@@ -32,7 +32,6 @@ Third-party code is pinned as git submodules:
 | Path | Upstream | Pinned to |
 | --- | --- | --- |
 | `dotbot` | anishathalye/dotbot | release tag |
-| `tmux/plugins/catppuccin/tmux` | catppuccin/tmux | release tag |
 | `vim_runtime` | amix/vimrc | `master` commit |
 | `vim/bundle/vim-pathogen` | tpope/vim-pathogen | `master` commit |
 | `vim/bundle/vim-polyglot` | sheerun/vim-polyglot | `master` commit |
@@ -65,6 +64,21 @@ Stage first because `./install` runs `git submodule update`, which resets
 every submodule to the commit recorded in the index. If the new commit is not
 staged yet, `./install` silently puts the old one back.
 
+## Update tmux plugins
+
+tmux plugins are not submodules. [TPM](https://github.com/tmux-plugins/tpm)
+clones the `@plugin` entries in `tmux.conf` into `~/.tmux/plugins/` and
+`./install` runs it. To update them to the latest upstream:
+
+```sh
+~/.tmux/plugins/tpm/bin/update_plugins all
+tmux source-file ~/.tmux.conf
+```
+
+Inside tmux, `prefix + U` does the same. After adding or removing a `@plugin`
+line, run `./install` (or `prefix + I`) to install it, and
+`~/.tmux/plugins/tpm/bin/clean_plugins` to delete removed ones.
+
 ## List
 
 ### Vim
@@ -77,12 +91,11 @@ staged yet, `./install` silently puts the old one back.
 - zsh-autocompletion
 
 ### tmux
+- [tpm](https://github.com/tmux-plugins/tpm)
 - [catppuccin/tmux](https://github.com/catppuccin/tmux) (mocha). Needs tmux
   3.2 or later and a [Nerd Font](https://www.nerdfonts.com/) for the icons.
-- tmux reads its config only when the server starts. If a tmux server was
-  already running before `./install`, reload it with
-  `tmux source-file ~/.config/tmux/tmux.conf` or restart it with
-  `tmux kill-server`.
+- [tmux-cpu](https://github.com/tmux-plugins/tmux-cpu) (CPU / RAM in the
+  status line)
 
 ### etc
 - autojump

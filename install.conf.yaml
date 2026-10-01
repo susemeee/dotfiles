@@ -10,11 +10,11 @@
     ~/.zshrc: zshrc
     ~/.vim: vim
     ~/.vim_runtime: vim_runtime # amix vim
-    ~/.config/tmux:
-        path: tmux
-        create: true
+    ~/.tmux.conf: tmux.conf
 
 - shell:
     - [git submodule update --init --recursive, Updating submodules]
     - [bash pre-install.sh, Running pre installation script]
     - [mkdir -p ~/.oh-my-zsh/custom/plugins/, Creating oh-my-zsh custom plugin folders]
+    - [test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Installing tpm]
+    - [tmux start-server \; source-file ~/.tmux.conf && ~/.tmux/plugins/tpm/bin/install_plugins && tmux start-server \; source-file ~/.tmux.conf, Installing tmux plugins]
