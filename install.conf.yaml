@@ -10,6 +10,9 @@
     ~/.zshrc: zshrc
     ~/.vim: vim
     ~/.vim_runtime: vim_runtime # amix vim
+    ~/.config/tmux:
+        path: tmux
+        create: true
 
 - shell:
     - [git submodule update --init --recursive, Updating submodules]
