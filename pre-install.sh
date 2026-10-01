@@ -51,8 +51,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-cat ./zshrc > ~/.zshrc
-
 # nvm
 echo 'Installing nvm'
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
