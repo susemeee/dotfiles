@@ -79,6 +79,20 @@ Inside tmux, `prefix + U` does the same. After adding or removing a `@plugin`
 line, run `./install` (or `prefix + I`) to install it, and
 `~/.tmux/plugins/tpm/bin/clean_plugins` to delete removed ones.
 
+## tmux in iTerm2 (`tmux -CC`)
+
+tmux runs in iTerm2's control mode, so tmux windows and panes open as native
+iTerm2 tabs and splits. Selection and `Cmd+C` stay inside a pane and copy to
+the local clipboard, also over ssh. The tmux status line is not shown.
+
+```sh
+tcc            # local: tmux -CC new -A -s main
+sshcc <host>   # remote: ssh -t <host> 'tmux -CC new -A -s main'
+```
+
+Both attach to the `main` session or create it. Run them from an iTerm2 tab
+that is not already inside tmux. Control mode does not work over mosh.
+
 ## List
 
 ### Vim

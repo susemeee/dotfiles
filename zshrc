@@ -46,6 +46,10 @@ alias gdff="git diff"
 alias git-sps="git stash && git pull && git stash pop"
 alias ta="tig --all"
 
+# tmux in iTerm2 control mode
+tcc() { tmux -CC new -A -s main }
+sshcc() { ssh -t "$1" 'tmux -CC new -A -s main' }
+
 # common
 # disable browser autorun of 'react-scripts start'
 export BROWSER="none"
