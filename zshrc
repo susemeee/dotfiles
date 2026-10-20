@@ -59,7 +59,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
    export OPENBLAS="$(brew --prefix openblas)"
    # jenv
    export PATH="$HOME/.jenv/bin:$PATH"
-   eval "$(jenv init -)"
+   command -v jenv >/dev/null && eval "$(jenv init -)"
 fi
 
 # autojump
