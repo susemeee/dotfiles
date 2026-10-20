@@ -86,11 +86,13 @@ iTerm2 tabs and splits. Selection and `Cmd+C` stay inside a pane and copy to
 the local clipboard, also over ssh. The tmux status line is not shown.
 
 ```sh
-tcc            # local: tmux -CC new -A -s main
-sshcc <host>   # remote: same, over ssh -t in a login shell
+tcc [session]          # local: tmux -CC new -A -s <session>
+sshcc <host> [session] # remote: same, over ssh -t in a login shell
 ```
 
-Both attach to the `main` session or create it. Run them from an iTerm2 tab
+Both attach to the session or create it. The session defaults to `main`.
+In an attached iTerm2 window, Shell > tmux > Dashboard lists the other
+sessions and switches to one. Run them from an iTerm2 tab
 that is not already inside tmux. Control mode does not work over mosh.
 
 ## List

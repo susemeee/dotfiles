@@ -47,8 +47,8 @@ alias git-sps="git stash && git pull && git stash pop"
 alias ta="tig --all"
 
 # tmux in iTerm2 control mode
-tcc() { tmux -CC new -A -s main }
-sshcc() { ssh -t "$1" 'exec $SHELL -lic "tmux -CC new -A -s main"' }
+tcc() { tmux -CC new -A -s "${1:-main}" }
+sshcc() { ssh -t "$1" "exec \$SHELL -lic 'tmux -CC new -A -s ${2:-main}'" }
 
 # common
 # disable browser autorun of 'react-scripts start'
