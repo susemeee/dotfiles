@@ -87,7 +87,7 @@ the local clipboard, also over ssh. The tmux status line is not shown.
 
 ```sh
 tcc            # local: tmux -CC new -A -s main
-sshcc <host>   # remote: ssh -t <host> 'tmux -CC new -A -s main'
+sshcc <host>   # remote: same, over ssh -t in a login shell
 ```
 
 Both attach to the `main` session or create it. Run them from an iTerm2 tab
